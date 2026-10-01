@@ -29,6 +29,9 @@ function getDevMenuHint() {
 }
 
 export default function HomeScreen() {
+  // Controlled error for Step 19: Breaking the CI pipeline
+  const pipelineTestNumber: number = "CONTROLLED_CI_FAILURE_TEST";
+
   return (
     <ThemedView style={styles.container}>
       <SafeAreaView style={styles.safeArea}>
