@@ -8,8 +8,36 @@ import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { Collapsible } from '@/components/ui/collapsible';
 import { WebBadge } from '@/components/web-badge';
+import { Product, ProductCard } from '@/components/product-card';
 import { BottomTabInset, MaxContentWidth, Spacing } from '@/constants/theme';
 import { useTheme } from '@/hooks/use-theme';
+
+const PRODUCTS: Product[] = [
+  {
+    id: '1',
+    name: 'Wireless Noise-Cancelling Headphones',
+    category: 'Audio',
+    price: 199.99,
+    inStock: true,
+    description: 'High-fidelity audio with active noise cancellation and 30-hour battery life.',
+  },
+  {
+    id: '2',
+    name: 'Ergonomic Mechanical Keyboard',
+    category: 'Peripherals',
+    price: 129.5,
+    inStock: true,
+    description: 'Custom hot-swappable switches with RGB backlighting and wrist rest.',
+  },
+  {
+    id: '3',
+    name: 'Ultra-Wide 4K Gaming Monitor',
+    category: 'Displays',
+    price: 499.0,
+    inStock: false,
+    description: '144Hz refresh rate, 1ms response time, with HDR600 color precision.',
+  },
+];
 
 export default function TabTwoScreen() {
   const safeAreaInsets = useSafeAreaInsets();
@@ -59,6 +87,15 @@ export default function TabTwoScreen() {
         </ThemedView>
 
         <ThemedView style={styles.sectionsWrapper}>
+          <Collapsible title="🛍️ Products Catalog (MCP Feature)">
+            <ThemedText type="small">
+              Explore available tech products with prices and live inventory tracking:
+            </ThemedText>
+            {PRODUCTS.map((item) => (
+              <ProductCard key={item.id} product={item} />
+            ))}
+          </Collapsible>
+
           <Collapsible title="File-based routing">
             <ThemedText type="small">
               This app has two screens: <ThemedText type="code">src/app/index.tsx</ThemedText> and{' '}
