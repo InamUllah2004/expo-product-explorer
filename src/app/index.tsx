@@ -37,6 +37,14 @@ export default function HomeScreen() {
           <ThemedText type="title" style={styles.title}>
             Welcome to&nbsp;Expo
           </ThemedText>
+          <ThemedView style={styles.studentBadge}>
+            <ThemedText type="subtitle" style={styles.studentName}>
+              Muhammad Inam Ullah
+            </ThemedText>
+            <ThemedText type="code" style={styles.studentRoll}>
+              Roll No: 23I-3058 (i233058)
+            </ThemedText>
+          </ThemedView>
         </ThemedView>
 
         <ThemedText type="code" style={styles.code}>
@@ -87,6 +95,22 @@ const styles = StyleSheet.create({
   },
   code: {
     textTransform: 'uppercase',
+  },
+  studentBadge: {
+    paddingVertical: Spacing.two,
+    paddingHorizontal: Spacing.four,
+    borderRadius: Spacing.two,
+    alignItems: 'center',
+    marginVertical: Spacing.two,
+  },
+  studentName: {
+    fontWeight: '700',
+    textAlign: 'center',
+  },
+  studentRoll: {
+    marginTop: 4,
+    opacity: 0.85,
+    textAlign: 'center',
   },
   stepContainer: {
     gap: Spacing.three,
